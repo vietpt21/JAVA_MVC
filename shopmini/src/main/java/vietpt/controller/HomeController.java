@@ -3,31 +3,31 @@ package vietpt.controller;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import vietpt.entity.DatasourceClother;
 import vietpt.entity.GiamDoc;
+import vietpt.entity.Lop;
 import vietpt.entity.NhanVien;
+import javax.swing.text.html.parser.Entity;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
-    @RequestMapping("/")
-    @ResponseBody
-   public static String Trangchu(){
-       ApplicationContext context =new ClassPathXmlApplicationContext("IoC.xml");
-       NhanVien nhanVien= (NhanVien) context.getBean("nhanvien");
-        // nhanVien.getThongBao();
-      //  ((ClassPathXmlApplicationContext)context).close();
-      //  System.out.println(nhanVien.getDoc().getTen() + "  "+ nhanVien.getDoc().getTuoi()+ "  "+nhanVien.getDoc().getChucvu());
-      for (String a : nhanVien.getList()){
-          System.out.println(a);
-      }
-       return "nfhsaf";
-   }
-    @RequestMapping("/logout")
-    @ResponseBody
-   public static String logout(){
-        ApplicationContext context =new ClassPathXmlApplicationContext("IoC.xml");
-       ((ClassPathXmlApplicationContext)context).close();
-       return "gslalfa";
-   }
+    @GetMapping
+  public String Trangchu(ModelMap modelMap){
+        ApplicationContext  context = new ClassPathXmlApplicationContext("IoC.xml");
+        DatasourceClother clother = (DatasourceClother) context.getBean("dataclother");
+        List<Lop> lstLop = clother.getlop();
+        modelMap.addAttribute("listl",lstLop);
+        return "home";
+
+    }
+
+
 }

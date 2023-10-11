@@ -5,30 +5,14 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="vietpt.controller"  />
-     <bean id="giamdoc" class="vietpt.entity.GiamDoc">
-		 <constructor-arg value="Viet"/>
-		 <constructor-arg value="22"/>
-		 <constructor-arg value="fjjkan"/>
-	 </bean>
 
-
-
-	<bean  id="nhanvien" class="vietpt.entity.NhanVien">
-		<constructor-arg ref = "giamdoc"/>
-		<property name="list">
-			<list>
-				<value>Viet</value>
-				<value>Viet1</value>
-				<value>Viet2</value>
-			</list>
-
-		</property>
-
+<bean id="dataSouce" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://db4free.net:3306/customer_binhtt"/>
+	<property name="username" value="binhtt"/>
+	<property name="password" value="binhtt28"/>
 	</bean>
-
-
-
-
-
-
+<bean id="dataclother" class="vietpt.entity.DatasourceClother">
+	<property name="datasource" ref="dataSouce"/>
+</bean>
 </beans>

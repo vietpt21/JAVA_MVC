@@ -1,27 +1,18 @@
 package vietpt.controller;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import org.hibernate.Session;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import vietpt.entity.NhanVien;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/" )
 public class HomeController {
-	@RequestMapping("/")
-	@ResponseBody
-	public static String index() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
-		NhanVien nv = (NhanVien) context.getBean("nhanvien");
-		nv.getInfomation();
-		return "homesfsd";
-	}
+	@GetMapping
+	@Transactional
+	public String index(){
 
-	@RequestMapping("/login")
-	@ResponseBody
-	public static String login() {
-		return "loginxzczxczx";
+		return "login";
 	}
-
 }

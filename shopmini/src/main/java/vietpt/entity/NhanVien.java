@@ -1,19 +1,41 @@
 package vietpt.entity;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class NhanVien {
     String ten;
     String diachi;
     int tuoi;
     GiamDoc doc;
-    List<String> list;
-    List<GiamDoc> giamDocs;
+    List<GiamDoc> list;
+    List<String> listnv;
+    Map<String, Objects> map;
 
-    public List<String> getList() {
+    public Map<String, Objects> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, Objects> map) {
+        this.map = map;
+    }
+
+
+
+    public List<String> getListnv() {
+        return listnv;
+    }
+
+    public void setListnv(List<String> listnv) {
+        this.listnv = listnv;
+    }
+
+    public List<GiamDoc> getList() {
         return list;
     }
-    public void setList(List<String> list) {
+
+    public void setList(List<GiamDoc> list) {
         this.list = list;
     }
 
