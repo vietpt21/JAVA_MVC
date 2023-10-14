@@ -18,16 +18,16 @@
                      class="img-fluid" alt="Phone image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                <form>
+                <form action=""  method="post">
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="form1Example13" class="form-control form-control-lg" />
-                        <label class="form-label" for="form1Example13">Email address</label>
+                        <input name="tendangnhap" type="text" id="form1Example13" class="form-control form-control-lg"  />
+                        <label class="form-label" for="form1Example13">Username</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                        <input  name="matkhau" type="password" id="form1Example23" class="form-control form-control-lg" />
                         <label class="form-label" for="form1Example23">Password</label>
                     </div>
 
@@ -37,11 +37,12 @@
                             <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                             <label class="form-check-label" for="form1Example3"> Remember me </label>
                         </div>
-                        <a href="#!">Forgot password?</a>
+                        <a href="#">Forgot password?</a>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+
 
                     <div class="divider d-flex align-items-center my-4">
                         <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
