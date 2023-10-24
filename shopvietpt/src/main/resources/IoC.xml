@@ -10,13 +10,14 @@
         https://www.springframework.org/schema/tx/spring-tx.xsd ">
 
 
-
+    <mvc:resources mapping="resources/**" location="resources"/>
 	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3369/shopbaby"/>
 		<property name="username" value="root"/>
 		<property name="password" value="1122"/>
 	</bean>
+
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource"/>
 		<property name="packagesToScan" value="vietpt.entity"/>
@@ -26,7 +27,6 @@
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
-
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">

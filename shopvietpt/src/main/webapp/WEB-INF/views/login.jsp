@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="ISO-8859-1">
-    <link rel="stylesheet" href="resouces/Style/test.css">
     <title>Insert title here</title>
-    <jsp:include page="header.jsp"/>
+<jsp:include page="header.jsp"/>
 </head>
 <body>
 <section class="vh-100">
@@ -18,17 +18,18 @@
                      class="img-fluid" alt="Phone image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                <form action=""  method="post">
+
+
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input name="tendangnhap" type="text" id="form1Example13" class="form-control form-control-lg"  />
-                        <label class="form-label" for="form1Example13">Username</label>
+                        <input id="tendangnhap" name="tendangnhap" type="text"  class="form-control form-control-lg"  />
+                        <label class="form-label" for="tendangnhap">Username</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input  name="matkhau" type="password" id="form1Example23" class="form-control form-control-lg" />
-                        <label class="form-label" for="form1Example23">Password</label>
+                        <input id="matkhau"  name="matkhau" type="password" class="form-control form-control-lg" />
+                        <label class="form-label" for="matkhau">Password</label>
                     </div>
 
                     <div class="d-flex justify-content-around align-items-center mb-4">
@@ -41,10 +42,13 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                <button  type="submit" class="btn btn-primary btn-lg btn-block login">Login</button>
 
+                <div class="divider d-flex align-items-center my-4">
+                <span id="kq"></span>
+                </div>
 
-                    <div class="divider d-flex align-items-center my-4">
+                <div class="divider d-flex align-items-center my-4">
                         <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                     </div>
 
@@ -56,11 +60,14 @@
                        role="button">
                         <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
 
-                </form>
             </div>
         </div>
     </div>
 </section>
-<jsp:include page="buttom.jsp"/>
+
+<script  type="text/javascript" src="<c:url value="https://code.jquery.com/jquery-3.6.0.min.js" />"></script>
+<script  type="text/javascript" src="<c:url value="/resources/Js/jquery.waypoints.min.js" />"></script>
+<script  type="text/javascript" src="<c:url value="/resources/Js/custom.js" />"></script>
+
 </body>
 </html>

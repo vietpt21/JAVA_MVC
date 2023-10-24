@@ -6,16 +6,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-    <link rel="stylesheet" href="resouces/Style/test.css">
+
 <title>Insert title here</title>
 
-    <jsp:include page="header.jsp"/>
+
 </head>
-jhdusau
+<body>
+<h1>Hello</h1>
 
 
 
 
-<jsp:include page="buttom.jsp"/>
+
 </body>
 </html>
