@@ -18,20 +18,19 @@
                      class="img-fluid" alt="Phone image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-
-
+                <button class="active" id="dangnhap">Login</button> <button id="dangky" class="active">Register</button>
+                <br><br>
+                <div class="dn">
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input id="tendangnhap" name="tendangnhap" type="text"  class="form-control form-control-lg"  />
                         <label class="form-label" for="tendangnhap">Username</label>
                     </div>
-
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                         <input id="matkhau"  name="matkhau" type="password" class="form-control form-control-lg" />
                         <label class="form-label" for="matkhau">Password</label>
                     </div>
-
                     <div class="d-flex justify-content-around align-items-center mb-4">
                         <!-- Checkbox -->
                         <div class="form-check">
@@ -40,18 +39,13 @@
                         </div>
                         <a href="#">Forgot password?</a>
                     </div>
-
                     <!-- Submit button -->
                 <button  type="submit" class="btn btn-primary btn-lg btn-block login">Login</button>
 
-                <div class="divider d-flex align-items-center my-4">
-                <span id="kq"></span>
-                </div>
 
                 <div class="divider d-flex align-items-center my-4">
                         <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-                    </div>
-
+                </div>
                     <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
                        role="button">
                         <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
@@ -59,7 +53,24 @@
                     <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
                        role="button">
                         <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+                </div>
 
+                <div class="dk" style="display: none">
+                <div class="form-outline mb-4">
+                    <input id="tendangky" name="tendangnhap" type="text"  class="form-control form-control-lg"  />
+                    <label class="form-label" for="tendangnhap">Username</label>
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input id="mkdangky" name="matkhau" type="password" class="form-control form-control-lg" />
+                    <label class="form-label" for="matkhau">Password</label>
+                </div>
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                    <!-- Checkbox -->
+                </div>
+                <!-- Submit button -->
+                <button  type="submit" class="btn btn-primary btn-lg btn-block login">Register</button>
+                </div>
             </div>
         </div>
     </div>

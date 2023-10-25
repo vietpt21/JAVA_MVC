@@ -22,4 +22,18 @@ $(document).ready(function () {
            }
        })
     });
+    $("#dangnhap").click(function (){
+        $(this).addClass("active");
+        $("#dangky").removeClass("active");
+        $(".dn").show();
+        $(".dk").css("display","none");
+
+    });
+    $("#dangky").click(function (){
+        $(this).addClass("active");
+        $("#dangnhap").removeClass("active");
+        $(".dn").hide();
+        $(".dk").show();
+
+    })
 })
