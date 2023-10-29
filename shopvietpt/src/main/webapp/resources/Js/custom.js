@@ -14,7 +14,10 @@ $(document).ready(function () {
            },
            success:function (value){
             if(value == "true"){
-                $("#kq").append("Thanh cong")
+                duongdanhientai= window.location.href;
+                s ="Login/";
+                duongdan=duongdanhientai+s;
+                window.location=duongdan;
             }
             else {
                 $("#kq").append("That bai")
@@ -34,6 +37,12 @@ $(document).ready(function () {
         $("#dangnhap").removeClass("active");
         $(".dn").hide();
         $(".dk").show();
+
+    });
+
+
+    $(".login").click(function(e) {
+
 
     })
 })

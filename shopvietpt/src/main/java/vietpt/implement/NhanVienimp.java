@@ -1,5 +1,7 @@
 package vietpt.implement;
 
+import vietpt.entity.NhanVien;
+
 public interface NhanVienimp {
-    boolean Kiemtradangnhap(String tendangnhap,String matkhau);
+    boolean Themnhanvien(NhanVien nhanVien);
 }

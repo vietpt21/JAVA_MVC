@@ -2,6 +2,7 @@ package vietpt.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -12,25 +13,30 @@ import vietpt.implement.NhanVienimp;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class NhanViendao implements NhanVienimp {
+public class NhanViendao  implements NhanVienimp {
     @Autowired
     SessionFactory sessionFactory;
-    @Override
     @Transactional
-    public boolean Kiemtradangnhap(String tendangnhap, String matkhau) {
+    @Override
+    public boolean Themnhanvien(NhanVien nhanVien) {
         Session session = sessionFactory.getCurrentSession();
+        boolean status = false;
+        String sql  =  "INSERT INTO  nhanvien( tennhanvien, diachi, gioitinh, cmnn, machucvu, email, tendangnhap, matkhau) values (";
+        sql += "'"+nhanVien.getTennhanvien()+"',";
+        sql += "'"+nhanVien.getDiachi()+"',";
+        sql += "'"+nhanVien.getGioitinh()+"',";
+        sql += "'"+nhanVien.getCmnn()+"',";
+        sql += "'"+nhanVien.getChucVu().getMachucvu()+"',";
+        sql += "'"+nhanVien.getEmail()+"',";
+        sql += "'"+nhanVien.getTendangnhap()+"',";
+        sql += "'"+nhanVien.getMatkhau()+"')";
         try {
-            String sql = "from NhanVien where tendangnhap='"+tendangnhap+"' and matkhau='"+matkhau+"'";
-            NhanVien nhanVien = (NhanVien) session.createQuery(sql).getSingleResult();
-            if(nhanVien != null){
-                return true;
-            }
-            else
-                return false;
+            Query query = session.createSQLQuery(sql);
+            query.executeUpdate();
+            status =true;
+        } catch (Exception exception){
+            exception.printStackTrace();
         }
-        catch (Exception e){
-            return  false;
-        }
-
+        return  status;
     }
 }
